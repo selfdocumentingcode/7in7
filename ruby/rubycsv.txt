@@ -1,0 +1,4 @@
+name, age, favorite_color
+cat, 7, red
+lion, 14, orange
+dog, 2, blue

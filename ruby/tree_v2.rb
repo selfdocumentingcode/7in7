@@ -12,8 +12,8 @@ class Tree
   end        
  
   def visit_all(&block)
-    visit &block
-    children.each {|c| c.visit_all &block}
+    visit(&block)
+    children.each { |c| c.visit_all(&block) }
   end        
  
   def visit(&block)
@@ -40,3 +40,4 @@ puts
  
 puts "Visiting entire tree"
 ruby_tree.visit_all {|node| puts node.node_name}
+
