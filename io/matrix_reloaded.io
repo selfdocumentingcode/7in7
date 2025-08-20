@@ -23,7 +23,9 @@ TheMatrix := Object clone do(
     print := method(
         for(i, 0, sizeY-1, 
             row := values at(i)
-            for(j, 0, sizeX-1, write(row at(j), " "))
+            for(j, 0, sizeX-1, 
+                write(row at(j), " ")
+            )
             if(i < sizeY-1, writeln)
         )
     )
@@ -35,8 +37,6 @@ TheMatrix := Object clone do(
 
         for(i, 0, sizeY-1, 
             for(j, 0, sizeX-1, 
-                val := get(j, i)
-                // writeln(val)
                 tMatrix set(i,j,get(j,i))
             )
         )
