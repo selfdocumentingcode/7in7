@@ -12,6 +12,7 @@ reverso_app([],[]).
 reverso_app([Head|Tail], Result) :- 
     reverso_app(Tail, RevT),
     append(RevT, [Head], Result).
+
 % This works
 reverso_acc([],Acc, Acc).
 reverso_acc([Head|Tail], Acc, Result) :-

@@ -1,7 +1,12 @@
-count(0, []).
-count(Count, [Head|Tail]) :- count(TailCount, Tail), Count is TailCount + 1.
+count([], 0).
+count([Head|Tail], Count) :- count(Tail, TailCount), Count is TailCount + 1.
  
-sum(0, []).
-sum(Total, [Head|Tail]) :- sum(Sum, Tail), Total is Head + Sum.
+sum([], 0).
+sum([Head|Tail], Total) :- sum(Tail, Sum), Total is Head + Sum.
  
-average(Average, List) :- sum(Sum, List), count(Count, List), Average is Sum/Count.
+average(List, Average) :- sum(List, Sum), count(List, Count), Average is Sum/Count.
+
+add_one([], []).
+add_one([Head|Tail], [HeadPlus1|Result]) :-
+    HeadPlus1 is Head+1,
+    add_one(Tail, Result).
